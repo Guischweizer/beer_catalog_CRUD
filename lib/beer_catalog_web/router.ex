@@ -21,9 +21,11 @@ defmodule BeerCatalogWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", BeerCatalogWeb do
-  #   pipe_through :api
-  # end
+   scope "/api", BeerCatalogWeb do
+    pipe_through :browser
+
+    resources "/beers", BeerController
+   end
 
   # Enables LiveDashboard only for development
   #

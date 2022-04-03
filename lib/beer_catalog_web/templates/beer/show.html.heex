@@ -1,0 +1,28 @@
+<h1>Show Beer</h1>
+
+<ul>
+
+  <li>
+    <strong>Brand:</strong>
+    <%= @beer.brand %>
+  </li>
+
+  <li>
+    <strong>Style:</strong>
+    <%= @beer.style %>
+  </li>
+
+  <li>
+    <strong>Origin:</strong>
+    <%= @beer.origin %>
+  </li>
+
+  <li>
+    <strong>Quantity:</strong>
+    <%= @beer.quantity %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.beer_path(@conn, :edit, @beer) %></span> |
+<span><%= link "Back", to: Routes.beer_path(@conn, :index) %></span>

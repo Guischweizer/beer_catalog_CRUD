@@ -1,0 +1,32 @@
+<h1>Listing Beers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Style</th>
+      <th>Origin</th>
+      <th>Quantity</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for beer <- @beers do %>
+    <tr>
+      <td><%= beer.brand %></td>
+      <td><%= beer.style %></td>
+      <td><%= beer.origin %></td>
+      <td><%= beer.quantity %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.beer_path(@conn, :show, beer) %></span>
+        <span><%= link "Edit", to: Routes.beer_path(@conn, :edit, beer) %></span>
+        <span><%= link "Delete", to: Routes.beer_path(@conn, :delete, beer), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Beer", to: Routes.beer_path(@conn, :new) %></span>
